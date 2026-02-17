@@ -1,31 +1,35 @@
 import React, { useEffect, useState } from "react";
 
 const Services = () => {
-  const [first, setFirst] = useState("this is normal data ");
-  const [second, setSecond] = useState("this is very large data ");
+  const [first, setFirst] = useState("this is normal data");
+  const [second, setSecond] = useState("ya this also change it after click");
 
   useEffect(() => {
-    console.log("services components created");
+    console.log("created");
     return () => {
-      console.log("servies componet deleted.");
+      console.log("deleted");
     };
-  }, []);
+  }, [first]);
   return (
     <div>
-      <h2>{first}</h2>
-      <button
-        onClick={() => setFirst("here is no data found")}
-        className="bg-blue-300 py-1 px-3 rounded-md text-sm cursor-pointer"
-      >
-        you can change this data!
-      </button>
-      <h2 className="mt-2">{second}</h2>
-      <button
-        onClick={() => setSecond("please check you data")}
-        className="bg-red-300 py-1 px-3 rounded-md text-sm cursor-pointer"
-      >
-        you can change this data!
-      </button>
+      <div>
+        <h2>{first}</h2>
+        <button
+          className="bg-blue-300  py-1 px-2 rounded-md"
+          onClick={() => setFirst("'boom' change this data")}
+        >
+          click here and will be change data
+        </button>
+      </div>
+      <div>
+        <h2>{second}</h2>
+        <button
+          className="bg-red-300  py-1 px-2 rounded-md"
+          onClick={() => setSecond(" you see change it ")}
+        >
+          click here and will be change data
+        </button>
+      </div>
     </div>
   );
 };
