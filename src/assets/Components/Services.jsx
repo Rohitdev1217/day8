@@ -9,7 +9,7 @@ const Services = () => {
     return () => {
       console.log("servies componet deleted.");
     };
-  }, [second]);
+  }, []);
   return (
     <div>
       <h2>{first}</h2>
